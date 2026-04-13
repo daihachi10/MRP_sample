@@ -5,9 +5,9 @@
 
 */
 
-#define LED01 4  // 4番ピンをLEDに接続
-#define LED02 16 // 16番ピンをLEDに接続
-#define SWITCH 2 // 2番ピンをSWITCHに接続
+#define LED_01 4  // 4番ピンをLEDに接続
+#define LED_02 16 // 16番ピンをLEDに接続
+#define SWITCH 2  // 2番ピンをSWITCHに接続
 
 int LEDSwitchDelay = 50;
 
@@ -15,20 +15,20 @@ void setup() {
 
   Serial.begin(9600);
   pinMode(SWITCH, INPUT_PULLUP);
-  pinMode(LED01, OUTPUT);
-  pinMode(LED02, OUTPUT);
+  pinMode(LED_01, OUTPUT);
+  pinMode(LED_02, OUTPUT);
 }
 
 // 赤LED
 void redOn() {
-  digitalWrite(LED01, HIGH);
-  digitalWrite(LED02, LOW);
+  digitalWrite(LED_01, HIGH);
+  digitalWrite(LED_02, LOW);
 }
 
 // 青LED
 void blueOn() {
-  digitalWrite(LED01, LOW);
-  digitalWrite(LED02, HIGH);
+  digitalWrite(LED_01, LOW);
+  digitalWrite(LED_02, HIGH);
 }
 
 void loop() {
@@ -40,8 +40,8 @@ void loop() {
     delay(LEDSwitchDelay);
   } else {
     Serial.println("Switch is not pressed");
-    digitalWrite(LED01, LOW);
-    digitalWrite(LED02, LOW);
+    digitalWrite(LED_01, LOW);
+    digitalWrite(LED_02, LOW);
   }
   delay(50);
 }
